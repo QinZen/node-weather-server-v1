@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const fs = require('fs');
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 app.set('view engine','hbs');
 
 
@@ -46,4 +48,6 @@ app.get('/about',(req,res)=>{
   res.send('<h1>Hi! This is about page</hi>');
 })
 
-app.listen(3000);
+app.listen(port,()=>{
+  console.log(`success up on port ${port}`);
+});
